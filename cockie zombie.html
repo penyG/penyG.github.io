@@ -16,20 +16,33 @@
       cookie_count = cookie_count+1;
       count_text.textContent = cookie_count;
     }
-    function cursor(){
-      setimterval(cookieClick,1000)
+    {function cursor(){
+      setInterval(cookieClick,3000,1)
     }
+  }
+    {  function komasan(){
+       setInterval(cookieClick,3000,1)
+    }
+  }
+    {    function farm(){
+           setInterval(cookieClick,3000,1)
+    }
+  }
+    {     function factory(){
+            setInterval(cookieClick,3000,1)
+    }
+  }
     </script>
       <p>
         <span id = "cookie_count"></span>cookies
         </p>
         <img onclick='cookieClick()' src="cookie.png" alt="">
         <ul>
-          <li onclicl="cursor()">指</li>
-          <li>小間さん</li>
-          <li>ファーム</li>
-          <li>まんｋ</li>
-          <li>ファクトリー</li>
+          <li onclick="cursor()">指</li>
+            <li onclick="komasan()">小間さん</li>
+              <li onclick="farm()">ファーム</li>
+                <li onclick="factory()">まんｋ</li>
+                  <li>指</li>
     </ul>
   </body>
 </html>
