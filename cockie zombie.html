@@ -10,19 +10,17 @@
   </head>
   <body>
     <script type="text/javascript">
+
     let ls_count = localstrage.getitem("ls_count");
     if(ls_count){
-    cookie_count = parseInt(ls_count);
+      cookie_count =0;
   }else{
   cookie_count =0;
   }
   setInterval(save_action,1000);
     function save_action(){
       localstorage.setitem("ls_count",cookie_count);
-
     }
-    localstrage .serItem('c_count',0);
-    cookie_count = parseInt(localstrage.getItem('c_count',0))
 
     function cookieClick(num){
       var count_text = document.getElementById('cookie_count')
@@ -52,9 +50,9 @@
         <img onclick='cookieClick()' src="cookie.png" alt="">
         <ul>
           <li onclick="cursor()">指</li>
-            <li onclick="komasan()">小間さん</li>
+            <li onclick="komasan()">堀江さん</li>
               <li onclick="farm()">ファーム</li>
-                <li onclick="factory()">まんｋ</li>
+                <li onclick="factory()">国井</li>
                   <li>指</li>
     </ul>
   </body>
