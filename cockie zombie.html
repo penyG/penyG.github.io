@@ -10,8 +10,20 @@
   </head>
   <body>
     <script type="text/javascript">
-    cookie_count=0;
+    let ls_count = localstrage.getitem("ls_count");
+    if(ls_count){
+    cookie_count = parseInt(ls_count);
+  }else{
+  cookie_count =0;
+  }
+  setInterval(save_action,1000);
+    function save_action(){
+      localstorage.setitem("ls_count",cookie_count);
+
+    }
+    
     function cookieClick(){
+
       var count_text = document.getElementById('cookie_count')
       cookie_count = cookie_count+1;
       count_text.textContent = cookie_count;
