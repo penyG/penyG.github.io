@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media "screen">
+    body{background-image:url("OIP.jpg");}
+
+    img{width:280px;}
+    </style>
+    </head>
+
+    <body>
+      <script type="text/javascript">
+
+      let ls_count=localStorage.getItem("ls_count");
+      if(ls_count){
+        cookie_count=parseInt(ls_count);
+      }else {
+        cookie_count=0;
+      }
+
+      setInterval(save_action,1000);
+      setInterval(screen_update,100);
+      function screen_update() {
+        var count_text=document.getElementById('cookie_count')
+        count_text.tectContent=cookie_count;
+      }
+
+      function save_action() {
+        localStorage.setItem("ls_count",cookie_count);
+      }
+
+      function cookieClick(num) {
+        var count_text =document.getElementById('cookie_count')
+        cookie_count=cookie_count+num;
+        count_text.textContent=cookie_count;
+      }
+      function cl() {
+        if(cookie_count >=100){
+          cookie_count -= 100;
+        setInterval(cookieClick,1000,1);
+      }
+      }
+      function cll() {
+        if(cookie_count >=1000){
+          cookie_count -= 1000;
+            setInterval(cookieClick,1000,10);
+        }
+      }
+      function clll() {
+        if(cookie_count >=10000){
+          cookie_count -= 10000;
+        setInterval(cookieClick,1000,100);
+      }}
+      function cllll() {
+        if(cookie_count >=100000){
+          cookie_count -= 100000;
+        setInterval(cookieClick,1000,1000);
+      }}
+      function clllll() {
+        if(cookie_count >=1000000){
+          cookie_count -= 1000000;
+        setInterval(cookieClick,1000,10000);
+      }}
+      </script>
+
+      <div class="container">
+      <div class="item1">
+        <p>
+        <span id="cookie_count"></span>cookies
+      </p>
+        <img onclick='cookieClick(8)'src="cookieF.png"alt="" >
+      </div>
+          <div class="item2">
+          </div>
+          <div class="item3">
+          </div>
+      <ul>
+        <li onclick="cl()">カーソル</li>
+        <li onclick="cll()">グランマ</li>
+        <li onclick="clll()">ファーム</li>
+        <li onclick="cllll()">マイン</li>
+        <li onclick="clllll()">ファクトリー</li>
+      </ul>
+      </body>
+</html>
