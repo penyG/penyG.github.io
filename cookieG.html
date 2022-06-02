@@ -1,0 +1,101 @@
+!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <meta charset="utf-8">
+    <title></title>
+    <style media "screen">
+    body{background-image:url("haikei.jpg");}
+
+    img{width:280px;}
+    </style>
+    </head>
+
+    <body>
+      <script type="text/javascript">
+
+      let ls_count=localStorage.getItem("ls_count");
+      if(ls_count){
+        cookie_count=parseInt(ls_count);
+      }else {
+        cookie_count=0;
+      }
+
+      setInterval(save_action,1000);
+
+      su_event_id = setInterval(screen_update,100);
+      function screen_update() {
+        var count_text=document.getElementById('cookie_count')
+        count_text.tectContent=cookie_count;
+      }
+      function event_clear() {
+        clearInterval(su_event_id);
+      }
+
+      function save_action() {
+        localStorage.setItem("ls_count",cookie_count);
+      }
+
+      function cookieClick(num) {
+        var cookie_img = document.getElementById('cookie_img');
+        cookie_img.classList.remove('animate__animated','animate__shakeX');
+        void cookie_img.offsetWidth;
+        cookie_img.classList.add('animate__animated','animate__shakeX');
+        var count_text =document.getElementById('cookie_count')
+        cookie_count=cookie_count+num;
+        count_text.textContent=cookie_count;
+      }
+      function cl() {
+        if(cookie_count >=10){
+          cookie_count -= 10;
+        setInterval(cookieClick,1000,1);
+      }
+      }
+      function cll() {
+        if(cookie_count >=100){
+          cookie_count -= 100;
+            setInterval(cookieClick,1000,10);
+        }
+      }
+      function clll() {
+        if(cookie_count >=1000){
+          cookie_count -= 1000;
+        setInterval(cookieClick,1000,100);
+      }}
+      function cllll() {
+        if(cookie_count >=10000){
+          cookie_count -= 10000;
+        setInterval(cookieClick,1000,1000);
+      }}
+      function clllll() {
+        if(cookie_count >=100000){
+          cookie_count -= 100000;
+        setInterval(cookieClick,1000,10000);
+      }}
+      </script>
+
+      <div class="container">
+      <div class="item1">
+        <button id="screen_switch" onclick="event_clear()" type="button" name="button">更新切り替え</button>
+        <p>
+        <span id="cookie_count"></span>cookies
+      </p>
+          <img id="cookie_img" onclick="cookieClick(1)" src="cookie.png" alt="">
+      </div>
+          <div class="item2">
+          </div>
+          <P class="animate__animated animate__bounce">あん</p>
+          <div class="item3">
+          </div>
+      <ul>
+        <li onclick="cl()">カーソル</li>
+        <li onclick="cll()">グランマ</li>
+        <li onclick="clll()">ファーム</li>
+        <li onclick="cllll()">マイン</li>
+        <li onclick="clllll()">ファクトリー</li>
+      </ul>
+      </body>
+</html>
