@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <link
+    rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     <meta charset="utf-8">
     <title></title>
     <style media "screen">
@@ -21,7 +24,7 @@
       }
 
       setInterval(save_action,1000);
-      setInterval(screen_update,100);
+      su_event_id = setInterval(screen_update,100);
       function screen_update() {
         var count_text=document.getElementById('cookie_count')
         count_text.tectContent=cookie_count;
@@ -67,6 +70,7 @@
 
       <div class="container">
       <div class="item1">
+        <button type="button" name="button">亢進切り替え</button>
         <p>
         <span id="cookie_count"></span>cookies
       </p>
@@ -74,6 +78,7 @@
       </div>
           <div class="item2">
           </div>
+          <P class="animate__animated animate__bounce">あん</p>
           <div class="item3">
           </div>
       <ul>
